@@ -4,10 +4,9 @@ class Tutorial extends Phaser.Scene {
     }
 
     preload() {
-        this.load.setPath('/assets/');
-//cambio
-        this.load.video('video', './Tutorial.mp4');
-        this.load.image('pausa', './pausa.webp');
+        
+        this.load.video('video', '../assets/Tutorial.mp4');
+        this.load.image('pausa', '../assets/pausa.webp');
         this.load.image('play', './play1.webp');
         this.load.image('comenzar','./comenzar.png')
         this.load.on('complete', () => {
