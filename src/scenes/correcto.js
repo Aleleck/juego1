@@ -4,9 +4,9 @@ class Correcto extends Phaser.Scene {
     }
 
     preload() {
-        this.load.setPath('../assets/');
-        this.load.image('fondo1','./correcto.png');
-        this.load.image('boton', './siguiente.png');
+        
+        this.load.image('fondo1','assets/correcto.png');
+        this.load.image('boton', 'assets/siguiente.png');
     }
 
     create() {

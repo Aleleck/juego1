@@ -18,11 +18,11 @@ export default class GameScene extends Phaser.Scene {
         this.intentos = 0;
     }
     preload() {
-        this.load.setPath('../assets/');
-        this.load.image('fondo', './GameF.jpg');
-        this.load.image('atras', './atras.webp');
-        this.load.image('verificar', './verif.png');
-        this.load.image('incorrect', './incorrecto.gif');
+        
+        this.load.image('fondo', 'assets/GameF.jpg');
+        this.load.image('atras', 'assets/atras.webp');
+        this.load.image('verificar', 'assets/verif.png');
+        this.load.image('incorrect', 'assets/incorrecto.gif');
     }
     create() {
         const backgroundImage = this.add.image(400, 300, 'fondo').setScale(0.42, 0.56);
