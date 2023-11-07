@@ -10,7 +10,7 @@ class Correcto extends Phaser.Scene {
     }
 
     create() {
-       
+        
         const backgroundCorrecto = this.add.image(400, 300, 'fondo1').setScale(0.42, 0.56);
 
         const startButton = this.add.image(400, 340, 'boton')

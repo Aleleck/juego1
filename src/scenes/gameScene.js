@@ -18,13 +18,15 @@ export default class GameScene extends Phaser.Scene {
         this.intentos = 0;
     }
     preload() {
-        
+
         this.load.image('fondo', 'assets/GameF.jpg');
         this.load.image('atras', 'assets/atras.webp');
         this.load.image('verificar', 'assets/verif.png');
-        this.load.image('incorrect', 'assets/incorrecto.gif');
+        this.load.image('incorrect', 'assets/incorrecto.webp');   
     }
     create() {
+        
+
         const backgroundImage = this.add.image(400, 300, 'fondo').setScale(0.42, 0.56);
 
         const backButton = this.add.image(700, 550, 'atras').setInteractive().setScale(0.3);
@@ -53,23 +55,20 @@ export default class GameScene extends Phaser.Scene {
                     document.body.removeChild(numeratorInput);
                     this.scene.start('Correcto');
                 } else {
-                    this.intentos++; // Incrementar los intentos
-                    if (this.intentos >= 3) {
+                    let intentos = 0;
+                    intentos++; // Incrementar los intentos
+                    if (intentos <= 3) {
+                        console.log("Inténtalo de nuevo.");
+                        let inco = this.add.image( 400, 300, 'incorrect').setScale(1);
+                        setTimeout(() => {
+                            inco.setVisible(false);
+                        }, 1000);
+                    } else {
                         // Llevar al jugador a la escena de "gameOver"
                         document.body.removeChild(denominatorInput);
                         document.body.removeChild(numeratorInput);
                         this.scene.start('GameOver');
-                    } else {
-                        console.log("Inténtalo de nuevo.");
-                        const incorrectSprite = this.add.sprite(400, 300, 'incorrect');
-
-                        // Configura la animación para que se reproduzca automáticamente
-                        incorrectSprite.play('incorrect_animation'); // 'incorrect_animation' es el nombre de la animación
-
-                        // Establece un temporizador para ocultar el sprite después de cierto tiempo
-                        this.time.delayedCall(2000, () => {
-                            incorrectSprite.setVisible(false);
-                        });
+                        console.log(this.intentos);
                     }
                 }
             }
