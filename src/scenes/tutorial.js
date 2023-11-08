@@ -8,14 +8,16 @@ class Tutorial extends Phaser.Scene {
         this.load.video('video', 'assets/Tutorial.mp4');
         this.load.image('pausa', 'assets/pausa.webp');
         this.load.image('play', 'assets/play1.webp');
+        this.load.image('puntero', './puntero.png');
         this.load.image('comenzar', 'assets/comenzar.png');
         this.load.on('complete', () => {
         console.log('Load complete');
+
         });
     }
 
     create() {
-
+        this.input.setDefaultCursor('url("assets/puntero.png"), pointer');
         // Obtener las dimensiones de la ventana del juego
         const gameWidth = this.game.config.width;
         const gameHeight = this.game.config.height;

@@ -23,10 +23,11 @@ export default class GameScene extends Phaser.Scene {
         this.load.image('atras', 'assets/atras.webp');
         this.load.image('verificar', 'assets/verif.png');
         this.load.image('incorrect', 'assets/incorrecto.webp');   
+        this.load.image('puntero', './puntero.png');
     }
     create() {
         
-
+        this.input.setDefaultCursor('url("assets/puntero.png"), pointer');
         const backgroundImage = this.add.image(400, 300, 'fondo').setScale(0.42, 0.56);
 
         const backButton = this.add.image(700, 550, 'atras').setInteractive().setScale(0.3);

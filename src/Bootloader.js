@@ -10,7 +10,7 @@ class Bootloader extends Phaser.Scene {
         this.load.video('fondo', './FondoAnimado.mp4');
         //this.load.image('background', './Fondo.webp');
         this.load.image('startButton', './start.png');
-        
+        this.load.image('puntero', './puntero.png');
 
         this.load.on('complete', () => {
             console.log('Load complete');
@@ -18,7 +18,8 @@ class Bootloader extends Phaser.Scene {
     }
 
     create() {
-        
+        this.input.setDefaultCursor('url("assets/puntero.png"), pointer');
+
         // Obtener las dimensiones de la ventana del juego
         const gameWidth = this.game.config.width;
         const gameHeight = this.game.config.height;

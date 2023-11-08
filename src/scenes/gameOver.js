@@ -4,11 +4,12 @@ export default class GameOverScene extends Phaser.Scene {
     }
 
     preload(){
-        this.load.image('over', 'assets/gameOver.png')
+        this.load.image('over', 'assets/gameOver.png');
+        this.load.image('puntero', './puntero.png');
     }
 
     create() {
-        
+        this.input.setDefaultCursor('url("assets/puntero.png"), pointer');
         this.add.image(400, 300, 'over').setScale(0.42, 0.56).setDepth(2);
 
         // Agrega un botón para volver al menú principal o volver a intentar
