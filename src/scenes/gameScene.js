@@ -55,9 +55,9 @@ export default class GameScene extends Phaser.Scene {
                     document.body.removeChild(numeratorInput);
                     this.scene.start('Correcto');
                 } else {
-                    let intentos = 0;
-                    intentos++; // Incrementar los intentos
-                    if (intentos <= 3) {
+                    
+                    this.intentos++; // Incrementar los intentos
+                    if (this.intentos <= 3) {
                         console.log("Inténtalo de nuevo.");
                         let inco = this.add.image( 400, 300, 'incorrect').setScale(1);
                         setTimeout(() => {
